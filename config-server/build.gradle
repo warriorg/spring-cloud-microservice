@@ -1,0 +1,13 @@
+group 'com.warriorg.config'
+version '0.1'
+
+
+dependencyManagement {
+    imports {
+        mavenBom 'org.springframework.cloud:spring-cloud-config:1.2.3.BUILD-SNAPSHOT'
+    }
+}
+
+dependencies {
+    compile 'org.springframework.cloud:spring-cloud-config-server'
+}

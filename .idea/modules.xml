@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/config-server/config-server.iml" filepath="$PROJECT_DIR$/.idea/modules/config-server/config-server.iml" group="config-server" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/config-server/config-server_main.iml" filepath="$PROJECT_DIR$/.idea/modules/config-server/config-server_main.iml" group="config-server" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/config-server/config-server_test.iml" filepath="$PROJECT_DIR$/.idea/modules/config-server/config-server_test.iml" group="config-server" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/feign-store/feign-store.iml" filepath="$PROJECT_DIR$/.idea/modules/feign-store/feign-store.iml" group="feign-store" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/feign-store/feign-store_main.iml" filepath="$PROJECT_DIR$/.idea/modules/feign-store/feign-store_main.iml" group="feign-store" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/feign-store/feign-store_test.iml" filepath="$PROJECT_DIR$/.idea/modules/feign-store/feign-store_test.iml" group="feign-store" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/netflix-server/netflix-server.iml" filepath="$PROJECT_DIR$/.idea/modules/netflix-server/netflix-server.iml" group="netflix-server" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/netflix-server/netflix-server_main.iml" filepath="$PROJECT_DIR$/.idea/modules/netflix-server/netflix-server_main.iml" group="netflix-server" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/netflix-server/netflix-server_test.iml" filepath="$PROJECT_DIR$/.idea/modules/netflix-server/netflix-server_test.iml" group="netflix-server" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ribbon-store/ribbon-store.iml" filepath="$PROJECT_DIR$/.idea/modules/ribbon-store/ribbon-store.iml" group="ribbon-store" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ribbon-store/ribbon-store_main.iml" filepath="$PROJECT_DIR$/.idea/modules/ribbon-store/ribbon-store_main.iml" group="ribbon-store" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ribbon-store/ribbon-store_test.iml" filepath="$PROJECT_DIR$/.idea/modules/ribbon-store/ribbon-store_test.iml" group="ribbon-store" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/spring-cloud-microservice.iml" filepath="$PROJECT_DIR$/.idea/modules/spring-cloud-microservice.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/user-provider/user-provider.iml" filepath="$PROJECT_DIR$/.idea/modules/user-provider/user-provider.iml" group="user-provider" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/user-provider/user-provider_main.iml" filepath="$PROJECT_DIR$/.idea/modules/user-provider/user-provider_main.iml" group="user-provider" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/user-provider/user-provider_test.iml" filepath="$PROJECT_DIR$/.idea/modules/user-provider/user-provider_test.iml" group="user-provider" />
+    </modules>
+  </component>
+</project>

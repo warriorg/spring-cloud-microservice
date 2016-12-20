@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: org.springframework.cloud:spring-cloud-starter-archaius:1.2.3.RELEASE">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.cloud/spring-cloud-starter-archaius/1.2.3.RELEASE/c1b7d611b7273be15b3433a975b143c1c9b0ccda/spring-cloud-starter-archaius-1.2.3.RELEASE.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.cloud/spring-cloud-starter-archaius/1.2.3.RELEASE/304081b6d177d406ae10a4de9d58bf116c4fe66e/spring-cloud-starter-archaius-1.2.3.RELEASE-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

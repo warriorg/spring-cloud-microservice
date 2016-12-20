@@ -1,0 +1,57 @@
+buildscript {
+
+    ext {
+        springBootVersion = '1.4.2.RELEASE'
+    }
+
+    repositories {
+        mavenCentral()
+        mavenLocal()
+        maven { url "http://repo.spring.io/snapshot" }
+        maven { url "http://repo.spring.io/milestone" }
+        maven { url "http://repo.spring.io/release" }
+    }
+
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+        classpath "io.spring.gradle:dependency-management-plugin:0.6.1.RELEASE"
+    }
+}
+
+
+
+subprojects {
+
+
+
+
+    apply plugin: 'java'
+    apply plugin: 'idea'
+    apply plugin: 'org.springframework.boot'
+    apply plugin: "io.spring.dependency-management"
+
+
+    dependencyManagement {
+        imports {
+            mavenBom "org.springframework.cloud:spring-cloud-dependencies:Camden.SR3"
+        }
+    }
+
+    repositories {
+        mavenCentral()
+        mavenLocal()
+        maven { url "http://repo.spring.io/snapshot" }
+        maven { url "http://repo.spring.io/milestone" }
+        maven { url "http://repo.spring.io/release" }
+    }
+
+
+    sourceCompatibility = 1.8
+    targetCompatibility = 1.8
+
+    dependencies {
+//        compile 'org.springframework.cloud:spring-cloud-starter-config'
+//        compile 'org.springframework.cloud:spring-cloud-starter-eureka'
+        testCompile("junit:junit")
+    }
+}
