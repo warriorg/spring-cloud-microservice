@@ -54,3 +54,5 @@ buildNumber.properties
 
 .idea/
 *.iml
+Would skip repository config-repo/
+
