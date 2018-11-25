@@ -1,0 +1,26 @@
+server:
+  port: 8888
+spring:
+  cloud:
+    config:
+      server:
+        encrypt.enabled: false
+        git:
+          uri: https://github.com/warriorg/config-repo
+          searchPaths: licensingservice,organizationservice
+#          username: native-cloud-apps
+#          password: 0ffended
+
+
+#server:
+#  port: 8888
+#spring:
+#  profiles:
+#    active: native
+#  cloud:
+#    config:
+#      server:
+#        encrypt.enabled: false
+#        native:
+#          searchLocations: file:///users/warrior/Documents/Notes/java/spring-cloud-microservice/config-server/src/main/resources/config/licensingservice, file:///users/warrior/Documents/Notes/java/spring-cloud-microservice/config-server/src/main/resources/config/organizationservice
+

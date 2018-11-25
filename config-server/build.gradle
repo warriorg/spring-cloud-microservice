@@ -1,0 +1,17 @@
+buildscript {
+    dependencies {
+        classpath "io.spring.gradle:dependency-management-plugin:0.5.2.RELEASE"
+    }
+}
+
+apply plugin: "io.spring.dependency-management"
+
+dependencyManagement {
+    imports {
+        mavenBom 'org.springframework.cloud:spring-cloud-config:1.4.4.RELEASE'
+    }
+}
+
+dependencies {
+    compile 'org.springframework.cloud:spring-cloud-starter-config'
+}

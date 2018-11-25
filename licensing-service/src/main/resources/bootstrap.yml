@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: licensingservice  # 必须直接映射到Spring Cloud配置服务器中的目录名称
+  profiles:
+    active:
+      default
+  cloud:
+    config:
+      uri: http://localhost:8888
