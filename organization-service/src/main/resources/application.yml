@@ -1,0 +1,24 @@
+# 这些配置适当的位置在 bootstrap.yml
+#spring:
+#  application:
+#    name: organizationservice
+#  profiles:
+#    active: default
+#  cloud:
+#    config:
+#      enabled: true
+
+eureka:
+  instance:
+    # 注册服务的IP， 而不是服务器的名称
+    # 在基于容器的部署中，容器将以随机生成主机名启动，并且该容器没有DNS记录
+    # 基于云的微服务应该是短暂的和无状态的，它们可以随意启动和关闭。IP地址更适合这些类型的服务。
+    preferIpAddress: true
+  client:
+    # 触发器，告诉组织服务通过Eureka注册它本身
+    registerWithEureka: true
+    # 告知Spring Eureka客户端以获取注册表的本地副本 true，将在本地缓存注册表。间隔30s，客户端就联系Eureka服务，检查注册表是否有变化
+    fetchRegistry: true
+    serviceUrl:
+      # Eureka 服务列表，列表以逗号分隔
+      defaultZone: http://localhost:8761/eureka/

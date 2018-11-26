@@ -1,0 +1,9 @@
+server:
+  port: 8761
+
+eureka:
+  client:
+    registerWithEureka: false     # eureka-server 启动时不要使用Eureka服务进行注册
+  fetchRegistry: false            # 不要在本地缓存注册表信息
+  server:
+    waitTimeInMsWhenSyncEmpty: 5    # 在服务器接受请求之前等待的初始时间
