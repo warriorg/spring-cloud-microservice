@@ -1,9 +1,6 @@
 package me.warriorg.licenses.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 /**
  * @author: warrior
@@ -12,12 +9,25 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "licenses")
 public class License {
+
     @Id
     @Column(name = "license_id", nullable = false)
     private String licenseId;
 
     @Column(name = "organization_id", nullable = false)
     private String organizationId;
+
+    @Transient
+    private String organizationName ="";
+
+    @Transient
+    private String contactName ="";
+
+    @Transient
+    private String contactPhone ="";
+
+    @Transient
+    private String contactEmail ="";
 
     @Column(name = "product_name", nullable = false)
     private String productName;
@@ -31,8 +41,9 @@ public class License {
     @Column(name = "license_allocated", nullable = false)
     private Integer licenseAllocated;
 
-    @Column(name = "comment")
+    @Column(name="comment")
     private String comment;
+
 
     public Integer getLicenseMax() {
         return licenseMax;
@@ -91,6 +102,38 @@ public class License {
         this.comment = comment;
     }
 
+    public String getOrganizationName() {
+        return organizationName;
+    }
+
+    public void setOrganizationName(String organizationName) {
+        this.organizationName = organizationName;
+    }
+
+    public String getContactName() {
+        return contactName;
+    }
+
+    public void setContactName(String contactName) {
+        this.contactName = contactName;
+    }
+
+    public String getContactPhone() {
+        return contactPhone;
+    }
+
+    public void setContactPhone(String contactPhone) {
+        this.contactPhone = contactPhone;
+    }
+
+    public String getContactEmail() {
+        return contactEmail;
+    }
+
+    public void setContactEmail(String contactEmail) {
+        this.contactEmail = contactEmail;
+    }
+
     public License withId(String id){
         this.setLicenseId(id);
         return this;
@@ -123,6 +166,26 @@ public class License {
 
     public License withComment(String comment){
         this.setComment(comment);
+        return this;
+    }
+
+    public License withOrganizationName(String organizationName){
+        this.setOrganizationName(organizationName);
+        return this;
+    }
+
+    public License withContactName(String contactName){
+        this.setContactName(contactName);
+        return this;
+    }
+
+    public License withContactPhone(String contactPhone){
+        this.setContactPhone(contactPhone);
+        return this;
+    }
+
+    public License withContactEmail(String contactEmail){
+        this.setContactEmail(contactEmail);
         return this;
     }
 }
