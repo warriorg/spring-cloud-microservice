@@ -2,7 +2,11 @@ package me.warriorg.licenses.controllers;
 
 import me.warriorg.licenses.config.ServiceConfig;
 import me.warriorg.licenses.model.License;
-import me.warriorg.licenses.repository.LicenseService;
+import me.warriorg.licenses.services.LicenseService;
+import me.warriorg.licenses.utils.UserContextHolder;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
@@ -17,14 +21,16 @@ import java.util.List;
 @RequestMapping(value = "v1/organizations/{organizationId}/licenses")
 public class LicenseServiceController {
 
-    @Resource
+    private static final Logger logger = LoggerFactory.getLogger(LicenseServiceController.class);
+    @Autowired
     private LicenseService licenseService;
 
-    @Resource
+    @Autowired
     private ServiceConfig serviceConfig;
 
     @RequestMapping(value="/",method = RequestMethod.GET)
-    public List<License> getLicenses(@PathVariable("organizationId") String organizationId) {
+    public List<License> getLicenses( @PathVariable("organizationId") String organizationId) {
+        logger.debug("LicenseServiceController Correlation id: {}", UserContextHolder.getContext().getCorrelationId());
         return licenseService.getLicensesByOrg(organizationId);
     }
 
@@ -32,17 +38,12 @@ public class LicenseServiceController {
     public License getLicenses( @PathVariable("organizationId") String organizationId,
                                 @PathVariable("licenseId") String licenseId) {
 
-        return licenseService.getLicense(organizationId,licenseId, "");
-    }
-
-    @RequestMapping(value = "/{licenseId}/{clientType}", method = RequestMethod.GET)
-    public License getLicensesWithClient(@PathVariable String organizationId, @PathVariable String licenseId, @PathVariable String clientType) {
-        return licenseService.getLicense(organizationId, licenseId, clientType);
+        return licenseService.getLicense(organizationId, licenseId);
     }
 
     @RequestMapping(value="{licenseId}",method = RequestMethod.PUT)
-    public String updateLicenses( @PathVariable("licenseId") String licenseId) {
-        return String.format("This is the put");
+    public void updateLicenses( @PathVariable("licenseId") String licenseId, @RequestBody License license) {
+        licenseService.updateLicense(license);
     }
 
     @RequestMapping(value="/",method = RequestMethod.POST)
@@ -52,7 +53,7 @@ public class LicenseServiceController {
 
     @RequestMapping(value="{licenseId}",method = RequestMethod.DELETE)
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public String deleteLicenses( @PathVariable("licenseId") String licenseId) {
-        return String.format("This is the Delete");
+    public void deleteLicenses( @PathVariable("licenseId") String licenseId, @RequestBody License license) {
+        licenseService.deleteLicense(license);
     }
 }
