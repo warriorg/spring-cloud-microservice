@@ -1,57 +1,61 @@
 buildscript {
 
-    ext {
-        springBootVersion = '1.4.2.RELEASE'
-    }
-
     repositories {
-        mavenCentral()
         mavenLocal()
-        maven { url "http://repo.spring.io/snapshot" }
-        maven { url "http://repo.spring.io/milestone" }
-        maven { url "http://repo.spring.io/release" }
-    }
-
-    dependencies {
-        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
-        classpath "io.spring.gradle:dependency-management-plugin:0.6.1.RELEASE"
+        maven { url "https://maven.aliyun.com/nexus/content/groups/public" }
+        mavenCentral()
     }
 }
 
-
+plugins {
+    id 'org.springframework.boot' version '2.6.2'
+    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+    id 'java'
+}
 
 subprojects {
-
-
-
-
     apply plugin: 'java'
-    apply plugin: 'idea'
+    apply plugin: 'java-library'
     apply plugin: 'org.springframework.boot'
     apply plugin: "io.spring.dependency-management"
 
+    repositories {
+        mavenLocal()
+        maven { url "https://maven.aliyun.com/nexus/content/groups/public" }
+        mavenCentral()
+    }
+
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
+
+    ext {
+        springCloudVersion = "2021.0.0"
+    }
+
+    dependencies {
+        compileOnly 'org.projectlombok:lombok'
+        annotationProcessor 'org.projectlombok:lombok'
+    }
 
     dependencyManagement {
         imports {
-            mavenBom "org.springframework.cloud:spring-cloud-dependencies:Camden.SR3"
+            mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
         }
     }
 
-    repositories {
-        mavenCentral()
-        mavenLocal()
-        maven { url "http://repo.spring.io/snapshot" }
-        maven { url "http://repo.spring.io/milestone" }
-        maven { url "http://repo.spring.io/release" }
+    test {
+        useJUnitPlatform()
     }
-
-
-    sourceCompatibility = 1.8
-    targetCompatibility = 1.8
 
     dependencies {
-//        compile 'org.springframework.cloud:spring-cloud-starter-config'
-//        compile 'org.springframework.cloud:spring-cloud-starter-eureka'
-        testCompile("junit:junit")
+    }
+
+    clean {
+        delete  "log", "logs", "bin", "out", ".settings", ".classpath", ".project"
     }
 }
+
+wrapper {
+    enabled(false)
+}
+

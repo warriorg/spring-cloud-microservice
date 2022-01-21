@@ -1,0 +1,31 @@
+version: '3.8'
+services:
+  platform-config:
+    build: shop-platform-config
+    restart: always
+    ports:
+      - 8888:8888
+
+  platform-registry:
+    build: shop-platform-registry-eureka
+    environment:
+      CONFIG_HOST: platform-config
+    restart: always
+    depends_on:
+      platform-config:
+        condition: service_healthy
+    ports:
+      - 8761:8761
+
+  shop-account:
+    build: shop-account
+    depends_on:
+      platform-config:
+        condition: service_healthy
+    environment:
+      CONFIG_HOST: platform-config
+      REGISTRY_HOST: platform-registry
+      AUTH_HOST: shop-security
+    restart: always
+    ports:
+      - 8401:8401
