@@ -2,5 +2,6 @@ build/
 gradle/
 .gradle
 .idea/
+log/
 
 .DS_Store

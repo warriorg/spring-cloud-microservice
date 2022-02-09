@@ -5,3 +5,8 @@ include 'shop-infrastructure'
 include 'shop-platform-config'
 include 'shop-platform-registry-eureka'
 
+
+file('shop-coupon').eachDir { dir ->
+    include dir.name
+    project(":${dir.name}").projectDir = dir
+}

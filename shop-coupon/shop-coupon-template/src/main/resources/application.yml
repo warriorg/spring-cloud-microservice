@@ -1,0 +1,33 @@
+# 项目的启动端口
+server:
+  port: 20000
+  error:
+    include-message: always
+
+spring:
+  application:
+    # 定义项目名称
+    name: coupon-template
+  cloud:
+    config:
+      enabled: false
+  #    import: optional:configserver:http://${CONFIG_HOST:localhost}:${CONFIG_PORT:8888}
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: postgres
+    password: postgres
+  jpa:
+    show-sql: true
+    hibernate:
+      # 在生产环境全部为none，防止ddl结构被自动执行
+      ddl-auto: none
+    properties:
+      hibernate.format_sql: true
+      hibernate.show_sql: true
+    open-in-view: false
+
+logging:
+  level:
+    dev.warriorg: debug
+    root: debug
