@@ -1,21 +1,19 @@
 package dev.warriorg.shop.account.domain;
 
+import dev.warriorg.shop.infrastructure.entity.BaseEntity;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.Id;
 
 @Entity
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Account {
-    @Id
-    @Column(name = "id", nullable = false)
-    private Long id;
+@EqualsAndHashCode(callSuper = true)
+public class Account extends BaseEntity {
 
     private String username;
 
@@ -31,11 +29,4 @@ public class Account {
 
     private String location;
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
 }
