@@ -2,8 +2,6 @@ rootProject.name = 'microservice-springcloud-sample'
 
 include 'shop-account'
 include 'shop-infrastructure'
-include 'shop-platform-config'
-include 'shop-platform-registry-eureka'
 
 
 file('shop-coupon').eachDir { dir ->

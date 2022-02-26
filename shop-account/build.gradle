@@ -2,7 +2,7 @@
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
     implementation 'com.alibaba.cloud:spring-cloud-starter-alibaba-nacos-config'
-    implementation 'com.alibaba.cloud:spring-cloud-starter-alibaba-nacos-discover'
+    implementation 'com.alibaba.cloud:spring-cloud-starter-alibaba-nacos-discovery'
 
     runtimeOnly 'org.hsqldb:hsqldb'
 
