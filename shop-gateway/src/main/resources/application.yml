@@ -1,0 +1,11 @@
+server:
+  port: 8000
+
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: bing_route
+          uri: https://www.bing.com
+          predicates:
+            - Path=/**
