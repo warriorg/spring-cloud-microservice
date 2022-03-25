@@ -8,7 +8,7 @@ buildscript {
 }
 
 plugins {
-    id 'org.springframework.boot' version '2.4.2'
+    id 'org.springframework.boot' version '2.6.3'
     id 'io.spring.dependency-management' version '1.0.11.RELEASE'
     id 'java'
 }
@@ -29,9 +29,9 @@ subprojects {
     targetCompatibility = JavaVersion.VERSION_17
 
     ext {
-        springBootVersion = "2.4.2"
-        springCloudVersion = "2020.0.1"
-        springCloudAlibabaVersion = "2021.1"
+        springBootVersion = "2.6.3"
+        springCloudVersion = "2021.0.1"
+        springCloudAlibabaVersion = "2021.0.1.0"
     }
 
     dependencies {
