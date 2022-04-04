@@ -7,6 +7,7 @@ import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.Entity;
+import javax.validation.constraints.NotEmpty;
 
 @Entity
 @Data
@@ -15,6 +16,7 @@ import javax.persistence.Entity;
 @EqualsAndHashCode(callSuper = true)
 public class Account extends BaseEntity {
 
+    @NotEmpty(message = "username not empty")
     private String username;
 
     private String password;

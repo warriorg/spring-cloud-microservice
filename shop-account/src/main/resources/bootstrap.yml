@@ -1,0 +1,15 @@
+spring:
+  profiles:
+    acitve: dev
+  application:
+    name: account
+  cloud:
+    #避免nacos取网卡出错
+    inetutils:
+      preferred-networks: 10.10
+    nacos:
+      config:
+        server-addr: ${CONFIG_HOST:192.168.157.129}:${CONFIG_PORT:8848}
+        file-extension: yaml
+        namespace: learning
+        group: DEFAULT_GROUP

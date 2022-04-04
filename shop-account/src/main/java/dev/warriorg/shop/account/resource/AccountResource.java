@@ -20,7 +20,7 @@ public class AccountResource {
     @Resource
     private AccountApplicationService service;
 
-    @GetMapping("{/username}")
+    @GetMapping("/{username}")
     @Cacheable(key = "#username")
     public Account getUser (@PathVariable String username) {
         return service.findAccountByUsername(username);
@@ -29,7 +29,7 @@ public class AccountResource {
 
     @PostMapping
     @CacheEvict(key = "#user.username")
-    public void createUser(@Valid @NotConflictAccount Account user) {
+    public void createUser(@Valid @NotConflictAccount @RequestBody Account user) {
         service.createAccount(user);
     }
 
@@ -38,7 +38,7 @@ public class AccountResource {
      */
     @PutMapping
     @CacheEvict(key = "#user.username")
-    public void updateUser(@Valid @NotConflictAccount Account user) {
+    public void updateUser(@Valid @NotConflictAccount  @RequestBody Account user) {
         service.updateAccount(user);
     }
 
