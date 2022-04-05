@@ -21,7 +21,7 @@ public class AccountResource {
     private AccountApplicationService service;
 
     @GetMapping("/{username}")
-    @Cacheable(key = "#username")
+//    @Cacheable(key = "#username")
     public Account getUser (@PathVariable String username) {
         return service.findAccountByUsername(username);
     }

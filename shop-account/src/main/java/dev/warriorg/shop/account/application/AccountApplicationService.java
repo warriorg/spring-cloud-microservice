@@ -1,5 +1,6 @@
 package dev.warriorg.shop.account.application;
 
+import com.alibaba.csp.sentinel.annotation.SentinelResource;
 import dev.warriorg.shop.account.domain.Account;
 import dev.warriorg.shop.account.domain.AccountRepository;
 import dev.warriorg.shop.infrastructure.utility.Encryption;
@@ -23,6 +24,7 @@ public class AccountApplicationService {
         repository.save(account);
     }
 
+    @SentinelResource(value = "findAccountByUsername", fallback = )
     public Account findAccountByUsername(String username) {
         return repository.findByUsername(username);
     }
