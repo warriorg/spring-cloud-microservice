@@ -24,7 +24,7 @@ public class AccountApplicationService {
         repository.save(account);
     }
 
-    @SentinelResource(value = "findAccountByUsername", fallback = )
+    @SentinelResource(value = "findAccountByUsername")
     public Account findAccountByUsername(String username) {
         return repository.findByUsername(username);
     }
